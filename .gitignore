@@ -1,0 +1,28 @@
+# Xcode
+.DS_Store
+xcuserdata/
+DerivedData/
+.idea/
+*.hmap
+*.xcodeproj/
+*.xcworkspace/
+*.xccheckout
+*.xcuserstate
+
+# Tuist
+Generated/
+TuistCache/
+
+# Swift Package Manager
+/.build/
+Package.resolved
+
+# CocoaPods
+Pods/
+
+# Carthage
+Carthage/
+
+# Other system files
+*.swp
+*.lock
