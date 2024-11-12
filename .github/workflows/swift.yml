@@ -16,8 +16,9 @@ jobs:
 
     - name: Set up Tuist
       run: |
-          curl -Ls https://install.tuist.io | bash
-          echo "$HOME/.tuist" >> $GITHUB_PATH
+        # Install Tuist using the official method
+        curl -Ls https://install.tuist.io | bash
+        echo "$HOME/.tuist" >> $GITHUB_PATH
 
     - name: Install dependencies with Tuist
       run: tuist fetch
@@ -32,8 +33,8 @@ jobs:
 
     - name: Build
       run: |
-        xcodebuild build -project WhatsAppClone1.xcworkspace -scheme WhatsAppClone1 clean build -sdk iphoneos CODE_SIGNING_ALLOWED=No
+        xcodebuild build -workspace WhatsAppClone1.xcworkspace -scheme WhatsAppClone1 clean build -sdk iphoneos CODE_SIGNING_ALLOWED=No
 
     - name: Run tests
       run: |
-        xcodebuild test -project WhatsAppClone1.xcworkspace -scheme WhatsAppClone1 clean build -sdk iphoneos -destination "platform=iOS Simulator,OS=17.0,name=iPhone 14 Pro Max" CODE_SIGNING_ALLOWED=No
+        xcodebuild test -workspace WhatsAppClone1.xcworkspace -scheme WhatsAppClone1 clean build -sdk iphoneos -destination "platform=iOS Simulator,OS=17.0,name=iPhone 14 Pro Max" CODE_SIGNING_ALLOWED=No
